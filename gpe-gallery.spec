@@ -10,6 +10,7 @@ Source0:	http://gpe.linuxtogo.org/download/source/%{name}-%{version}.tar.gz
 URL:		http://gpe.linuxtogo.org
 BuildRequires:	gtk+2-devel >= 2:2.10.7
 BuildRequires:	libgpewidget-devel
+BuildRequires:  sed >= 4.0
 Requires:	gpe-icons
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
