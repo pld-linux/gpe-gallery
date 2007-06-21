@@ -1,5 +1,5 @@
-#
 Summary:	GPE picture gallery
+Summary(pl.UTF-8):	Galeria obrazów GPE
 Name:		gpe-gallery
 Version:	0.97
 Release:	1
@@ -10,14 +10,16 @@ Source0:	http://gpe.linuxtogo.org/download/source/%{name}-%{version}.tar.gz
 URL:		http://gpe.linuxtogo.org
 BuildRequires:	gtk+2-devel >= 2:2.10.7
 BuildRequires:	libgpewidget-devel
-BuildRequires:  sed >= 4.0
 Requires:	gpe-icons
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define gpename %(echo %{name} | sed -e 's/gpe-//')
 
 %description
-GPE picture gallery, for embedded devices
+GPE picture gallery, for embedded devices.
+
+%description -l pl.UTF-8
+Galeria obrazów GPE dla urządzeń wbudowanych.
 
 %prep
 %setup -q
