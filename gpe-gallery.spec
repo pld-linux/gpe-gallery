@@ -3,13 +3,14 @@ Summary(pl.UTF-8):	Galeria obrazów GPE
 Name:		gpe-gallery
 Version:	0.97
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Applications/Communications
 Source0:	http://gpe.linuxtogo.org/download/source/%{name}-%{version}.tar.gz
 # Source0-md5:	ba488fac2b1484862c2e52cd017793cb
-URL:		http://gpe.linuxtogo.org
+URL:		http://gpe.linuxtogo.org/
 BuildRequires:	gtk+2-devel >= 2:2.10.7
 BuildRequires:	libgpewidget-devel
+BuildRequires:	pkgconfig
 Requires:	gpe-icons
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -26,6 +27,9 @@ Galeria obrazów GPE dla urządzeń wbudowanych.
 
 %build
 %{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}" \
+	LDFLAGS="%{rpmldflags}" \
 	PREFIX=%{_prefix}
 
 %install
@@ -39,6 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc ChangeLog
 %attr(755,root,root) %{_bindir}/%{name}
 %{_datadir}/application-registry/%{name}.applications
 %{_desktopdir}/%{name}.desktop
